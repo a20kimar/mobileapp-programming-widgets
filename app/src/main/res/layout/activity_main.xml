@@ -11,13 +11,21 @@
         android:id="@+id/myTxtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="250dp"
         android:text="Please enter a value" />
 
     <EditText
         android:id="@+id/myEditTxt"
         android:hint="Enter value"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:text="SEND" />
 
 </LinearLayout>
