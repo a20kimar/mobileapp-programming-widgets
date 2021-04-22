@@ -1,42 +1,53 @@
-
 # Rapport
 
-**Skriv din rapport här!**
+Jag började med att forka appen sedan öppna den i android studios.
 
-_Du kan ta bort all text som finns sedan tidigare_.
+Jag ändrade sedan den existerande layouten till Linear Layout istället för Constraint Layout genom att byta ut koden i `activity_main.xml` så att det ser ut som kodsnutten nedan.
 
-## Följande grundsyn gäller dugga-svar:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
+    ...
 
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
-```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+</LinearLayout>
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
+Sedan la jag till en `TextView` widget och en `EditText` widget och satte 250dp som värde till `layout_marginTop` på `TextView` widgeten så att alla widgets under den mer centrerat på skärmen som bild nedan visar.
 
-![](android.png)
+![Widgets](screenshot_1.png)
 
-Läs gärna:
+Efter det la jag till en knapp i form av `Button` widget. Jag ändrade även så att övriga widgets har en padding på 10dp för att ge mer utrymme och gjorde så att knappen har samma bredd som sin parent. Nedan är den färdiga koden för de tre widgets samt en bild på hur den färdiga layouten ser ut.
 
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+```xml
+...
+    <TextView
+        android:id="@+id/myTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="Please enter a value" />
+
+    <EditText
+        android:id="@+id/myEditTxt"
+        android:hint="Enter value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:text="SEND" />
+...
+```
+
+![Widgets_Finished](screenshot_2.png)
